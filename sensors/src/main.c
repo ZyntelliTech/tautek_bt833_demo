@@ -5,9 +5,10 @@
  */
 
 #include <zephyr/kernel.h>
-#include <zephyr/drivers/gpio.h>
 #include <zephyr/device.h>
+#include <zephyr/drivers/gpio.h>
 #include <zephyr/drivers/sensor.h>
+
 /* 1000 msec = 1 sec */
 #define SLEEP_TIME_MS   1000
 

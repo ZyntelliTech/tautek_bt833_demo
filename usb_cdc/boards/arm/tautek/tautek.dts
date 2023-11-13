@@ -157,19 +157,28 @@
 	pinctrl-names = "default", "sleep";
 };
 
-arduino_serial: &uart1 {
+&uart1 {
 	current-speed = <115200>;
 	pinctrl-0 = <&uart1_default>;
 	pinctrl-1 = <&uart1_sleep>;
 	pinctrl-names = "default", "sleep";
 };
 
-arduino_i2c: &i2c0 {
+&i2c0 {
 	compatible = "nordic,nrf-twi";
 	status = "okay";
 	pinctrl-0 = <&i2c0_default>;
 	pinctrl-1 = <&i2c0_sleep>;
 	pinctrl-names = "default", "sleep";
+
+	bme680@76 {
+		compatible = "bosch,bme680";
+		reg = <0x76>;
+	};
+	lis3mdl@1c {
+		compatible = "st,lis3mdl-magn";
+		reg = <0x1c>;
+	};
 };
 
 &i2c1 {
